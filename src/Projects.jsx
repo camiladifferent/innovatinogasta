@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ArrowDown, Globe2, Layers3, ShieldCheck, Sparkles, BookOpen, Cpu } from 'lucide-react';
 import { mission, projects } from './content';
 import './projects.css';
