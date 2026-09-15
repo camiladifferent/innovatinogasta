@@ -2,8 +2,32 @@ export const articles = [
   { id: 'ia-educacion', category: 'Inteligencia artificial', title: 'Aprender en tiempos de inteligencia artificial', description: 'Nuevas preguntas sobre cómo aprendemos, enseñamos y convivimos con la IA.', source: 'UNESCO · El Correo', url: 'https://courier.unesco.org/es/articles/podemos-seguir-aprendiendo-en-armonia-con-la-ia', visual: 'ai', label: 'IA', featured: true },
   { id: 'seguridad', category: 'Ciudadanía digital', title: 'Tu vida digital, más segura', description: 'Recomendaciones para reconocer estafas y proteger tu información en internet.', source: 'Argentina.gob.ar · Guía', url: 'https://www.argentina.gob.ar/seguridad/ciberdelito/recomendaciones-para-evitar-estafas-en-internet', visual: 'security', label: 'Seguridad' },
   { id: 'competencias', category: 'Educación', title: 'Las habilidades para un mundo con IA', description: 'Un marco de UNESCO para aprender a utilizar la inteligencia artificial de forma responsable.', source: 'UNESCO · 28 mayo 2025', url: 'https://www.unesco.org/es/articles/marco-de-competencias-para-estudiantes-en-materia-de-ia', visual: 'education', label: 'Aprender' },
+  { id: 'ia-marco-pba', category: 'Gobierno digital', title: 'Buenos Aires regula el uso de la IA en el Estado', description: 'Un decreto provincial crea un registro obligatorio y principios de uso ético para ordenar la adopción de inteligencia artificial en la administración pública.', source: 'La Nación · Economía', url: 'https://www.lanacion.com.ar/economia/IA/la-provincia-de-buenos-aires-aprobo-un-marco-para-regular-el-uso-de-ia-en-la-administracion-publica-nid14072026/', visual: 'gov', label: 'Estado' },
+  { id: 'congreso-ciudades', category: 'Gobierno digital', title: 'Ciudades inteligentes: qué se debatió en el primer Congreso Federal', description: 'Más de 300 ciudades y 50 intendentes se reunieron para pensar juntos la modernización de los gobiernos locales.', source: 'Buenos Aires Ciudad · Gobierno', url: 'https://buenosaires.gob.ar/gcaba_historico/noticias/jorge-macri-abrira-el-primer-congreso-federal-de-ciudades-inteligentes', visual: 'gov', label: 'Ciudades' },
+  { id: 'alfabetizacion-mayores', category: 'Educación', title: 'La alfabetización digital como derecho de los adultos mayores', description: 'La norma que reconoce este derecho ya existe: el desafío ahora es hacerla efectiva en el día a día.', source: 'Infobae · Generación Silver', url: 'https://www.infobae.com/generacion-silver/2026/06/25/la-alfabetizacion-digital-como-derecho-de-los-adultos-mayores-la-norma-existe-el-desafio-es-hacerla-efectiva/', visual: 'education', label: 'Inclusión' },
 ];
+export const newsCategories = ['Todas', ...new Set(articles.map(a => a.category))];
 export const mission = 'Consolidar a Tinogasta como un municipio inteligente, seguro y conectado, brindando herramientas digitales que fomenten el desarrollo económico, la protección ciudadana y la eficiencia administrativa.';
+
+// Herramientas digitales municipales que ya están operativas.
+export const tools = [
+  {
+    id: 'portal-oficial', category: 'Gobierno digital', title: 'Portal oficial de Tinogasta',
+    description: 'El sitio institucional del municipio: novedades, gestión y acceso a la información pública.',
+    url: 'https://tinogasta.gob.ar', domain: 'tinogasta.gob.ar',
+  },
+  {
+    id: 'visit-tinogasta', category: 'Turismo', title: 'Visit Tinogasta',
+    description: 'Portal turístico con circuitos, alojamiento, gastronomía y agenda cultural, junto a la Secretaría de Turismo.',
+    url: 'https://visittinogasta.tur.ar', domain: 'visittinogasta.tur.ar',
+  },
+  {
+    id: 'invertir-tinogasta', category: 'Desarrollo económico', title: 'Invertir Tinogasta',
+    description: 'Información para inversores sobre oportunidades productivas y proyectos estratégicos del departamento.',
+    url: 'https://tinogasta.gob.ar/Invertir-Tinogasta/', domain: 'tinogasta.gob.ar/Invertir-Tinogasta',
+  },
+];
+export const toolCategories = ['Todos', ...new Set(tools.map(t => t.category))];
 
 // Iniciativas del Plan Estratégico 2026. No implican un estado de ejecución.
 export const projects = [

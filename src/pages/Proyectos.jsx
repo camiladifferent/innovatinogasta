@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { ArrowDown, Globe2, Layers3, ShieldCheck, Sparkles, BookOpen, Cpu } from 'lucide-react';
-import { mission, projects } from './content';
-import './projects.css';
+import { Link } from 'react-router-dom';
+import { ArrowDown, ArrowUpRight, Globe2, Layers3, ShieldCheck, Sparkles, BookOpen, Cpu } from 'lucide-react';
+import { mission, projects } from '../content';
+import PageHero from '../PageHero';
+import useReveal from '../useReveal';
+import '../projects.css';
 
 const icons = {
   'sitios-oficiales': Globe2,
@@ -13,20 +16,15 @@ const icons = {
   tinoaprende: BookOpen,
 };
 
-export default function Projects() {
+export default function Proyectos() {
+  useReveal();
   const [category, setCategory] = useState('Todos');
   const categories = ['Todos', ...new Set(projects.map(project => project.category))];
   const visible = projects.filter(project => category === 'Todos' || project.category === category);
 
   return (
-    <section id="proyectos" className="projects-section">
-      <div className="section-heading reveal">
-        <div>
-          <span className="eyebrow">02 / DE LAS IDEAS A LA ACCIÓN</span>
-          <h2>Un plan para<br/><em>transformar Tinogasta.</em></h2>
-        </div>
-        <p>Plan Estratégico de Modernización<br/>Tinogasta 2026</p>
-      </div>
+    <section className="projects-section">
+      <PageHero eyebrow="PLAN ESTRATÉGICO DE MODERNIZACIÓN · TINOGASTA 2026" crumb="Proyectos" title={<>Un plan para<br/><em>transformar Tinogasta.</em></>} description="Las iniciativas en marcha de la Dirección de Modernización, organizadas por área de trabajo." />
       <div className="plan-mission reveal">
         <span className="small-label">NUESTRA MISIÓN</span>
         <p>{mission}</p>
@@ -58,7 +56,7 @@ export default function Projects() {
           );
         })}
       </div>
-      <p className="source-note">Iniciativas incluidas en el Plan Estratégico de Modernización Tinogasta 2026. Las acciones describen el alcance previsto de cada proyecto.</p>
+      <p className="source-note">Iniciativas incluidas en el Plan Estratégico de Modernización Tinogasta 2026. Las acciones describen el alcance previsto de cada proyecto. ¿Buscás lo que ya está activo? <Link to="/herramientas">Conocé las herramientas en funcionamiento <ArrowUpRight size={13}/></Link></p>
     </section>
   );
 }

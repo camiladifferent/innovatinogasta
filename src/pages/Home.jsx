@@ -1,0 +1,28 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight, ArrowRight, ArrowDown, Cpu, ShieldCheck, Sparkles, Globe2, BookOpen, Landmark, Wrench } from 'lucide-react';
+import { articles } from '../content';
+import useReveal from '../useReveal';
+
+export default function Home() {
+  useReveal();
+  const teaser = articles.slice(0, 3);
+  return <>
+    <section className="hero" id="inicio"><div className="hero-copy"><span className="eyebrow"><i/> IDEAS LOCALES. POSIBILIDADES INFINITAS.</span><h1>El futuro se<br/>construye <em>acá.</em><span className="title-dot"/></h1><p>Conectamos tecnología, ideas y personas para impulsar una Tinogasta más innovadora.</p><div className="hero-actions"><Link className="button primary" to="/proyectos">Conocé los proyectos <ArrowUpRight size={19}/></Link><a className="text-link" href="#novedades">Qué hay de nuevo <ArrowRight size={18}/></a></div><div className="hero-foot"><span className="little-cross">✳</span><span>Una ciudad con identidad.<br/><strong>Una comunidad mirando hacia adelante.</strong></span></div></div><div className="hero-art" aria-label="Identidad de Innova Tinogasta"><div className="art-grid"/><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="orbit orbit-three"/><span className="art-coordinate">27°04′ S / 67°34′ O</span><div className="eagle-disc"><img src="/brand/ICONO.png" alt="Cóndor de Innova Tinogasta"/></div><div className="floating-tag tag-top"><span className="tag-icon"><Cpu size={19}/></span>Innovación con identidad</div><div className="floating-tag tag-bottom"><span className="live-dot"/>El próximo paso es nuestro <ArrowUpRight size={17}/></div><span className="pixel p1"/><span className="pixel p2"/><span className="pixel p3"/><div className="art-caption"><span>DESDE TINOGASTA</span><span>HACIA LO QUE VIENE ↗</span></div></div></section>
+    <div className="topic-strip"><span>EL CAMBIO EMPIEZA CON UNA IDEA</span><div><Sparkles/> Innovación</div><b>+</b><div><Globe2/> Comunidad</div><b>+</b><div><Cpu/> Tecnología</div><b>+</b><div><BookOpen/> Conocimiento</div><a href="#novedades" aria-label="Ir a novedades"><ArrowDown size={19}/></a></div>
+    <section id="novedades" className="section news">
+      <div className="section-heading reveal"><div><span className="eyebrow">01 / CONECTADOS CON LO QUE VIENE</span><h2>Ideas que nos <em>mueven.</em></h2></div><p>Tecnología en palabras simples.<br/>Noticias y lecturas para seguir aprendiendo.</p></div>
+      <div className="news-grid">{teaser.map(article => <a className={'news-card '+article.visual} key={article.id} href={article.url} target="_blank" rel="noopener noreferrer"><div className="news-visual"><span className="visual-label">INNOVA / EXPLORA</span>{article.visual === 'ai' ? <div className="ai-sculpture"><span/><span/><span/><span/><span/></div> : article.visual === 'security' ? <ShieldCheck className="large-icon" strokeWidth={.8}/> : article.visual === 'gov' ? <Landmark className="large-icon" strokeWidth={.8}/> : <div className="education-art"><span>a</span><span>i</span><Sparkles/></div>}<span className="visual-bottom">{article.label}<ArrowUpRight size={20}/></span></div><div className="news-content"><span className="category">{article.category}</span><h3>{article.title}</h3><p>{article.description}</p><div className="article-source">{article.source}<ArrowUpRight size={17}/></div></div></a>)}</div>
+      <Link className="text-link section-cta" to="/noticias">Ver todas las noticias <ArrowRight size={18}/></Link>
+    </section>
+    <section className="section hub reveal">
+      <div className="section-heading"><div><span className="eyebrow">02 / DE LAS IDEAS A LA ACCIÓN</span><h2>Recorré la <em>innovación.</em></h2></div><p>Dos formas de conocer el trabajo de la Dirección de Modernización.</p></div>
+      <div className="hub-grid">
+        <Link className="hub-card" to="/proyectos"><span className="hub-icon"><Sparkles size={22} strokeWidth={1.4}/></span><h3>Plan de Modernización</h3><p>Las iniciativas del Plan Estratégico 2026: gobierno digital, protección ciudadana, desarrollo emprendedor y educación.</p><span className="text-link">Ver los proyectos <ArrowUpRight size={17}/></span></Link>
+        <Link className="hub-card" to="/herramientas"><span className="hub-icon"><Wrench size={22} strokeWidth={1.4}/></span><h3>Herramientas en funcionamiento</h3><p>Los portales y servicios digitales del municipio que ya están activos y disponibles para vecinos y visitantes.</p><span className="text-link">Ver herramientas <ArrowUpRight size={17}/></span></Link>
+      </div>
+    </section>
+    <section className="about section reveal" id="nosotros"><div className="about-symbol"><img src="/brand/LOGO.png" alt="Innova Tinogasta"/></div><div className="about-copy"><span className="eyebrow">03 / TECNOLOGÍA CON PROPÓSITO</span><h2>El centro de la<br/>innovación sos <em>vos.</em></h2><p>Innova Tinogasta es el espacio de la Dirección de Modernización para acercar la tecnología a nuestra comunidad y compartir los proyectos que realizamos.</p><p>Creemos en el conocimiento compartido, las ideas que nacen acá y una transformación que nos incluya a todos.</p><Link to="/noticias" className="text-link">Descubrí, aprendé y conectá <ArrowUpRight size={19}/></Link></div></section>
+    <section className="closing"><span className="eyebrow">EL FUTURO ES UN TRABAJO EN EQUIPO</span><h2>De Tinogasta.<br/><span>Para lo que viene.</span><ArrowUpRight aria-hidden="true"/></h2><a href="#inicio" className="button light">Sigamos conectados <ArrowUpRight size={18}/></a><div className="closing-pixels" aria-hidden="true"><i/><i/><i/><i/></div></section>
+  </>;
+}
