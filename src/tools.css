@@ -1,12 +1,12 @@
 .tools-page { padding: 75px 5% 85px; max-width: 1600px; margin: auto; }
 .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; margin-top: 10px; }
-.tool-card { display: flex; flex-direction: column; gap: 14px; background: white; border: 1px solid #dce5ec; border-radius: 6px; padding: 28px; transition: transform .2s, border-color .2s; }
-.tool-card:hover { transform: translateY(-4px); border-color: #93b6d0; }
+.tool-card { display: flex; flex-direction: column; gap: 14px; background: white; border: 1px solid #e4dbd0; border-radius: 6px; padding: 28px; transition: transform .2s, border-color .2s; }
+.tool-card:hover { transform: translateY(-4px); border-color: #c9b29a; }
 .tool-card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .tool-status { display: inline-flex; align-items: center; gap: 7px; font-size: 9px; letter-spacing: .08em; color: #46825f; text-transform: uppercase; font-weight: 700; }
 .tool-status .live-dot { background: #2aa66c; }
 .tool-card h3 { margin: 0; font-size: 22px; }
-.tool-card p { margin: 0; font-size: 13px; line-height: 1.8; color: #637080; flex: 1; }
+.tool-card p { margin: 0; font-size: 13px; line-height: 1.8; color: #6b635c; flex: 1; }
 @media (max-width: 700px) {
   .tools-page { padding-block: 50px; }
   .tools-grid { grid-template-columns: 1fr; }
